@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'LOGIN',
+	'hostname' => 'www.franklinpracticum.com',
+	'username' => 'frank73_s17task',
+	'password' => 'Task.s17',
+	'database' => 'frank73_s17task',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

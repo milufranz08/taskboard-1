@@ -5,7 +5,11 @@
   </head>
   <body>
     <h1>Login</h1>
-    <?php echo validation_errors(); ?>
+    <?php if (isset ($_SESSION['Error'])){
+    	echo $_SESSION['Error']; 
+    }?>
+    <br>
+    <br>
     <?php echo form_open('VerifyLogin'); ?>
       <label for="username">Username:</label>
       <input type="text" size="20" id="username" name="username"/>
