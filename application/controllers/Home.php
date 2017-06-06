@@ -1,5 +1,4 @@
 <?php
-//session_start(); Error: Unable to start session because session already exists...
 class Home extends CI_Controller {
  
  function __construct()
