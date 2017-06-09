@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 	<?php foreach($results as $row){
-		$username = $row->username;
+		if (array_key_exists('username', $row)) {
+			$username = $row->username;
+		}
+		else {
+			$username = $row->email;
+		}
 	}?>
 <html>
  <head>
