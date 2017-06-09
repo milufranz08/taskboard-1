@@ -17,8 +17,8 @@ class VerifyLogin extends CI_Controller {
    if($this->form_validation->run() == FALSE)
    {
      //Redirect to login page
+   	 $_SESSION['Error'] = 'Username and Password are both required';
      $this->load->view('login_view');
-     $_SESSION['Error'] = 'Username or password is invalid';
    }
    else
    {
@@ -31,6 +31,7 @@ class VerifyLogin extends CI_Controller {
      redirect('home', 'refresh');
    	}
    	else {
+   		//redirect to login page
    		$_SESSION['Error'] = 'Username or password is invalid';
    		$this->load->view('login_view');
    	}

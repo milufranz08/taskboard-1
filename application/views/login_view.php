@@ -5,9 +5,11 @@
   </head>
   <body>
     <h1>Login</h1>
-    <?php if (isset ($_SESSION['Error'])){
-    	echo $_SESSION['Error']; 
-    }?>
+    <?php
+    	if (isset ($_SESSION['Error'])) {
+    		echo $_SESSION['Error']; 
+    	}
+    ?>
     <br>
     <br>
     <?php echo form_open('VerifyLogin'); ?>
