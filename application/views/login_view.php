@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+  <script type="text/javascript" language="javascript">
+  function redirect()
+  {
+    window.location.href="NewUser";
+  }
+  </script>
   <head>
     <title>Login</title>
   </head>
@@ -7,7 +13,7 @@
     <h1>Login</h1>
     <?php
     	if (isset ($_SESSION['Error'])) {
-    		echo $_SESSION['Error']; 
+    		echo $_SESSION['Error'];
     	}
     ?>
     <br>
@@ -17,9 +23,10 @@
       <input type="text" size="20" id="username" name="username"/>
       <br/>
       <label for="password">Password:</label>
-      <input type="password" size="20" id="passowrd" name="password"/>
+      <input type="password" size="20" id="password" name="password"/>
       <br/>
-      <input type="submit" value="Login"/>
+      <input type="submit" value="Login"/> 
+      <input type="button" value="Create Account" onclick="redirect();"/>
     </form>
   </body>
 </html>
