@@ -27,8 +27,8 @@ class VerifyLogin extends CI_Controller {
    		if (isset ($_SESSION['Error'])){
    			unset ($_SESSION['Error']);
    		}
-     //Go to private area
-     redirect('home', 'refresh');
+    	//Go to private area
+     	redirect('home', 'refresh');
    	}
    	else {
    		//redirect to login page

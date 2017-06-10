@@ -29,5 +29,34 @@ Class User extends CI_Model {
     }
     return false;
   }
+  
+  function isAvailable($field) {
+  	$this -> db -> select($field);
+  	$this -> db -> from('users');
+  	$this -> db -> where($field, $_POST[$field]);
+  	$this -> db -> limit(1);
+  	
+  	$query = $this -> db -> get();
+  	
+  	if($query -> num_rows() == 1) {
+  		//already in database
+  		return false;
+  	}
+  	return true;
+  }
+  
+  function addUserToDB() {
+  	$firstname = $_POST['firstname'];
+  	$lastname = $_POST['lastname'];
+  	$email = $_POST['email'];
+  	$username = $_POST['username'];
+  	$password = $_POST['password'];
+  	
+  	$sql = "INSERT INTO users (first_name, last_name, email, username, password)
+			VALUES ('$firstname', '$lastname', '$email', '$username', '$password')";
+  	
+  	return $this -> db -> query($sql);
+  }
+    
 }
 ?>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <script type="text/javascript" language="javascript">
+  <script type="text/javascript">
   function redirect()
   {
     window.location.href="NewUser";
