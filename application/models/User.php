@@ -4,7 +4,7 @@ Class User extends CI_Model {
     $this -> db -> select('user_id, username, password');
     $this -> db -> from('users');
     $this -> db -> where('username', $_POST['username']);
-    $this -> db -> where('password', $_POST['password']);
+    $this -> db -> where('password', md5($_POST['password']));
     $this -> db -> limit(1);
  
     $query = $this -> db -> get();
@@ -17,7 +17,7 @@ Class User extends CI_Model {
     	$this -> db -> select('user_id, email, password');
     	$this -> db -> from('users');
     	$this -> db -> where('email', $_POST['username']);
-    	$this -> db -> where('password', $_POST['password']);
+    	$this -> db -> where('password', md5($_POST['password']));
     	$this -> db -> limit(1);
     	
     	$query = $this -> db -> get();
@@ -50,7 +50,7 @@ Class User extends CI_Model {
   	$lastname = $_POST['lastname'];
   	$email = $_POST['email'];
   	$username = $_POST['username'];
-  	$password = $_POST['password'];
+  	$password = md5($_POST['password']);
   	
   	$sql = "INSERT INTO users (first_name, last_name, email, username, password)
 			VALUES ('$firstname', '$lastname', '$email', '$username', '$password')";
