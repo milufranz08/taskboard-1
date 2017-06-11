@@ -3,7 +3,7 @@
   <script type="text/javascript">
   function redirect()
   {
-    window.location.href="index.php/NewUser";
+    window.location.href="NewUser";
   }
   </script>
   <head>
