@@ -12,7 +12,7 @@
     ?>
     <br>
     <br>
-    <?php echo form_open('CreateUser'); ?>
+    <?php echo form_open('NewUser/create_user'); ?>
       <label for="firstname">Firstname:</label>
       <input type="text" size="20" id="firstname" name="firstname"/>
       <br/>
