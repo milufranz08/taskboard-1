@@ -1,0 +1,167 @@
+@CHARSET "UTF-8";
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #cccccc;
+}
+
+/*
+  ========================================
+  Primary header
+  ========================================
+*/
+
+.container group {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.logo {
+  width: 960px;
+  height: 80px;
+  margin: 0 auto;
+  marging-left: auto;
+  display: inline-block;
+  horizontal-align:top;
+  background-color: #39F;
+  padding: 20px 0 15px 0;
+  float: center;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+
+  left:0;
+  right:0;
+  top:0;
+}
+
+
+.topnav {
+  width: 960px;
+  margin-top: 0px;
+  display: inline-block;
+  clear: both;
+  *zoom: 1;
+  background-color: #efefef;
+  padding: 0 0;
+  float: center;
+  font-size: 14px;
+
+  left:0;
+  right:0;
+}
+
+sectionNavL {
+  float: left;
+  margin-left: 0px;
+  width: 40%;
+  text-align: left;
+}
+
+sectionNavR {
+  float: right;
+  margin-right: 20px;
+  width: 40%;
+  text-align: right;
+}
+a:link, a:visited {
+    color: black;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    color: red;
+}
+
+
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+
+#main-wrapper {
+	width: 960px;
+	margin: 0 auto;
+	marging-left: auto;
+	background: #ffffff;
+	display: inline-block;
+	text-align: center;
+}
+
+#body_cont {
+	padding-left: 25px;
+	margint-top: 160px
+}
+
+#secondary_nav {
+	height: 60px;
+}
+
+div.ticket {
+     width: 170px;
+     height: 60px;
+     background-color: #efefef;
+     margin: 0 0 0 20px;
+     float:left;
+}
+div.sectionBottom {
+	width: 900px;
+     height: 60px;
+     background-color: #ffffff;
+     margin: 0 0 0 20px;
+     float:left;
+}
+
+group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+sectionTop {
+  float: right;
+  margin: 0 1.5%;
+  width: 620px;
+  background: #ffffff;
+}
+asideTop {
+  float: left;
+  margin: 0 1.5%;
+  width: 220px;
+  background: #efefef;
+
+}
+
+/*
+  ========================================
+  Primary footer
+  ========================================
+*/
+
+.primary-footer small {
+  float: left;
+}
+
+.primary-footer {
+  width: 928px;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  z-index: 1;
+}
+
+
