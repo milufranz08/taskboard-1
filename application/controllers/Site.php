@@ -9,13 +9,6 @@ class Site extends CI_Controller {
 		$this->load->helper('url');
 	}
 
-	public function homeLink()
-	{
-		$this->load->view('templates/header');
-		$this->load->view('user_home_view');
-		$this->load->view('templates/footer');	
-	}
-	
 	public function newTask()
 	{
 		$this->load->view('templates/header');
@@ -50,7 +43,7 @@ class Site extends CI_Controller {
 		$this->load->view('pages/all_projects_view');
 		$this->load->view('templates/footer');
 	}
-
+	
 }
 
 ?>

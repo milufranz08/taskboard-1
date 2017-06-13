@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta charset="utf-8">
+    <title>Task Board<?php if (isset($page_title)) { echo ' | '.$page_title; } ?></title>
     
     	<link rel = "stylesheet" type = "text/css" 
    			href = "<?php echo base_url(); ?>assets/css/style.css">
@@ -14,7 +16,7 @@
 		<div class="topnav">
 			<ul>
         		<sectionNavL>
-					<a href='homeLink'>Home</a>
+					<a href='home'>Home</a>
 
 				</sectionNavL>
 			

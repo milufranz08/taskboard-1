@@ -9,7 +9,9 @@ class Home extends CI_Controller {
  function index()
  {
  	$data["results"] = $_SESSION['data'];
-	$this->load->view('home_view', $data);
+ 	$this->load->view('templates/header');
+	$this->load->view('user_home_view', $data);
+	$this->load->view('templates/footer');
  }
  
  function logout()

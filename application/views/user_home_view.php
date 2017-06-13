@@ -1,3 +1,13 @@
+ <!DOCTYPE html>
+	<?php foreach($results as $row){
+		if (array_key_exists('username', $row)) {
+			$username = $row->username;
+		}
+		else {
+			$username = $row->email;
+		}
+	}?>
+<html>
  <body>
  
  	<div id="main-wrapper">
@@ -6,11 +16,11 @@
 		</header>
 
 		<div  id="body_cont">
-			<h1>Welcome [Username]</h1>
+			<h1>Welcome <?php echo $username; ?>!</h1>
 			
 			<div  id="secondary_nav">
-				<a href='newTask'>New Task</a>
-				<a href="newProject">New Project</a>
+				<a href="<?php echo site_url().'/Site/newTask';?>">New Task</a>
+				<a href="<?php echo site_url().'/Site/newProject';?>">New Project</a>
 			</div>
 			
 			<div class="group">
