@@ -37,6 +37,8 @@ Class Task_model extends CI_Model {
   			'task_name' => $_POST['task_name'],
   			'task_description' => $_POST['task_desc'],
   			'task_notes' => $_POST['task_notes'],
+  			'task_project' => $_POST['task_project'],
+  			'task_assigned_to' => $_POST['task_assigned_to'],
   			'task_timestamp' => $_POST['timestamp'],
   			'task_completed' => $_POST['task_completed'],
   			'task_status' => $_POST['status']
