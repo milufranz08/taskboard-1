@@ -2,6 +2,7 @@
 	<?php foreach($results as $row){
 		if (array_key_exists('username', $row)) {
 			$username = $row->username;
+			$user_id = $row->user_id;
 		}
 		else {
 			$username = $row->email;
@@ -19,7 +20,7 @@
 			<h1>Welcome <?php echo $username; ?>!</h1>
 			
 			<div  id="secondary_nav">
-				<a href="<?php echo site_url().'/Site/newTask';?>">New Task</a>
+				<a href="<?php echo site_url()?>/Site/newTask/<?php echo $user_id?>">New Task</a>
 				<a href="<?php echo site_url().'/Site/newProject';?>">New Project</a>
 			</div>
 			
@@ -28,7 +29,7 @@
 					<h4>In Progress</h4>
 					<taskTickets>
 						<div class="ticket">
-							<a href='inProgress'>Task</a>
+							<a href='<?php echo site_url()?>/Task/manage_task/<?php /*task id will go here-*/?>'>Task</a>
 						</div>
 						<div class="ticket">
 							<a href='inProgress'>Task</a>

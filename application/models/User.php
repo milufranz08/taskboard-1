@@ -1,7 +1,7 @@
 <?php
 Class User extends CI_Model {
   function login() {
-    $this -> db -> select('user_id, username, password');
+    $this -> db -> select('user_id, username, password, team_lead_status');
     $this -> db -> from('users');
     $this -> db -> where('username', $_POST['username']);
     $this -> db -> where('password', md5($_POST['password']));
@@ -10,7 +10,13 @@ Class User extends CI_Model {
     $query = $this -> db -> get();
  
     if($query -> num_rows() == 1) {
-    	$_SESSION['data']= $query->result();
+    	$result = $query->result();
+    	$_SESSION['data'] = $result;
+    	foreach ($result as $row)
+    	{
+    		$_SESSION['username'] = $row->username;
+    		$_SESSION['user_id'] = $row->user_id;
+    	}
     	return true;
     }
     else {

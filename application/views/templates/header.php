@@ -6,6 +6,9 @@
     
     	<link rel = "stylesheet" type = "text/css" 
    			href = "<?php echo base_url(); ?>assets/css/style.css">
+   		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+   		<script src="<?php echo site_url();?>assets/js/moment.min.js" type="text/javascript"></script>
+   		<script src="<?php echo site_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
     </head>
     
     <body class="container group">
@@ -16,12 +19,12 @@
 		<div class="topnav">
 			<ul>
         		<sectionNavL>
-					<a href='home'>Home</a>
+					<a href="<?php echo site_url();?>/Home">Home</a>
 
 				</sectionNavL>
 			
 				<sectionNavR>
-					<a href='home/logout'>Logout</a>
+					<a href= "<?php echo site_url();?>/Home/logout">Logout</a>
 				</sectionNavR>
 			</ul>		
 		</div>

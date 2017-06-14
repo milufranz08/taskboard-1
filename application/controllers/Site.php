@@ -9,11 +9,17 @@ class Site extends CI_Controller {
 		$this->load->helper('url');
 	}
 
-	public function newTask()
+	public function newTask($user_id)
 	{
-		$this->load->view('templates/header');
+		$this->load->model('Task_model');
+		$data["results"] = $_SESSION['data'];
+		$data["project"] = $this->Task_model->get_project();
+		$data["users"] = $this->Task_model->get_users();
+		$data["tasks"] = $this->Task_model->get_tasks($user_id);
+		$this->load->view('templates/header', $data);
 		$this->load->view('pages/create_new_task_view');
 		$this->load->view('templates/footer');
+		
 	}
 	
 	public function completeTasks()
