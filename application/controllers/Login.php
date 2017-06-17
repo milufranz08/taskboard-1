@@ -46,6 +46,10 @@ class Login extends CI_Controller {
   		}
   	}
   }
+  
+  function newuser() {
+  	redirect('NewUser', 'refresh');
+  }
  
 }
 ?>
