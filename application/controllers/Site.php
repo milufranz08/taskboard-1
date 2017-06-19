@@ -32,7 +32,7 @@ class Site extends CI_Controller {
 	public function newProject()
 	{
 		$this->load->view('templates/header');
-		$this->load->view('pages/project_page_view');
+		$this->load->view('pages/new_project_page_view');
 		$this->load->view('templates/footer');
 	}
 	
