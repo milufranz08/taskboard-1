@@ -23,79 +23,39 @@
 	
 			
 	<div class="container-fluid">
-  		<div class="row-fluid">
-    			<div class="span2">
+  		<div class="row">
+			<div class="col-6 col-md-2">
   				<asideTop>
 					<h4><a href="completeTasks">Completed Tasks</a></h4>
 				</asideTop>
 				<asideBottom>
 					<h4><a href="projects">Projects</a></h4>
-				</asideBottom>
-			</div>
-  			<div class="span10">
+				</asideBottom>		
+		</div>
+  			<div class="col-6 col-md-8">
   				<sectionTop>
 					<h4>In Progress</h4>
+					<?php foreach ($tasks as $row1):?>
+					<?php if($row1->task_status == "2"):?>
 					<taskTickets>
-<!-- 						<div class="btn-group btn-group-justified" role="group" aria-label="..."> -->
-<!--   							<div class="btn-group" role="group"> -->
-<!--     								<button type="button" class="btn btn-default">Left</button> -->
-<!--   							</div> -->
-<!--   							<div class="btn-group" role="group"> -->
-<!--     								<button type="button" class="btn btn-default">Middle</button> -->
-<!--   							</div> -->
-<!--   							<div class="btn-group" role="group"> -->
-<!--     								<button type="button" class="btn btn-default">Right</button> -->
-<!--   							</div> -->
-<!-- 						</div> -->
-
-						<?php
-						$dbhost = 'www.franklinpracticum.com';
-						$dbuser = 'frank73_s17task';
-						$dbpass = 'Task.s17';
-						$dbname = 'frank73_s17task';
-
-						// Create connection
-						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-						
-						// Check connection
-						if (!$conn) {
-    							die("Connection failed: " . mysql_error());
-						} 
-						
-						$sql = 'SELECT task_name, task_status FROM tasks ORDER BY task_id';
-						//$sql = 'SELECT task_name, task_status FROM tasks';
-						$result = $conn->query($sql);
-						
-			
-						if ($result->num_rows > 0) {
-    						// output data of each row
-				
-    							while($row = $result->fetch_assoc()) {
-    								echo "<td> <a href='<?php echo site_url()?>/Task/manage_task/<?php'"."' >" . $row['task_name'] . "<a/> </td>";
-        							//echo "Task#: " . $row["task_id"]. " - To do: " . $row["task_name"]. " " ."<br>";
-    							}
-						} else {
-    								echo "0 results";
-						}
-						
-						$conn->close();
-						?>
-
+  							<div class="btn-group" role="group">
+    								<a href="<?php echo site_url()?>/Task/manage_task/<?php echo $row1->task_id?>" type="button" class="btn btn-default"><?php echo $row1->task_name?></a>
+							</div>
 					</taskTickets>
+					<?php endif;?>
+					<?php endforeach;?>
 				</sectionTop>
 				<sectionBottom>
-							<h4>Not Started</h4>
-<!-- 							<div class="btn-group btn-group-justified" role="group" aria-label="..."> -->
-<!--   								<div class="btn-group" role="group"> -->
-<!--     									<button type="button" class="btn btn-default">Left</button> -->
-<!--   								</div> -->
-<!--   								<div class="btn-group" role="group"> -->
-<!--     									<button type="button" class="btn btn-default">Middle</button> -->
-<!--   								</div> -->
-<!--   									<div class="btn-group" role="group"> -->
-<!--     									<button type="button" class="btn btn-default">Right</button> -->
-<!--   								</div> -->
-<!-- 							</div> -->
+					<h4>Not Started</h4>
+					<?php foreach ($tasks as $row2):?>
+					<?php if($row2->task_status == "1"):?>
+					<taskTickets>
+  							<div class="btn-group" role="group">
+    								<a href="<?php echo site_url()?>/Task/manage_task/<?php echo $row2->task_id?>" type="button" class="btn btn-default"><?php echo $row2->task_name?></a>
+							</div>
+					</taskTickets>
+					<?php endif;?>
+					<?php endforeach;?>	
 				</sectionBottom>	
 			</div>
   		</div>
