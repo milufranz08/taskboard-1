@@ -5,6 +5,7 @@ class Home extends CI_Controller {
  {
    parent::__construct();
    $this->load->model('Task_model','',TRUE);
+   $this->load->model('homepage_model','',TRUE);
  }
  
  function index()
