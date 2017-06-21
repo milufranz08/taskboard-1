@@ -18,22 +18,18 @@
 			<div  id="secondary_nav">
 				<a href="<?php echo site_url()?>/Site/newTask/<?php echo $user_id?>" class="btn btn-info" role="button">New Task</a>
 				<a href="<?php echo site_url().'/Site/newProject';?>" class="btn btn-info" role="button">New Project</a>
-			</div>
-		</div>
-	
-			
-	<div class="container-fluid">
   		<div class="row">
 			<div class="col-6 col-md-2">
-  				<asideTop>
+  				<div class="asideTop">
 					<h4>Completed Tasks</h4>
 					<p><a href="completeTasks">View All</a></p>
-				</asideTop>
-				<asideBottom>
+				</div>
+				<div class="asideBottom">
 					<h4>Projects</a></h4>
 					<p><a href="projects">View All</a></p>
-				</asideBottom>	
+				</div>	
 			</div>
+			<div class="container-fluid">
   			<div class="col-6 col-md-10">
   				<sectionTop>
 					<h4 class="bold">In Progress</h4>
@@ -67,4 +63,3 @@
   		</div>
 	</div>
 	</div>
-</body>
