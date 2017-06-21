@@ -25,6 +25,7 @@ Class Task_model extends CI_Model {
   			'task_notes' => $_POST['task_notes'],
   			'task_project' => $_POST['task_project'],
   			'task_assigned_to' => $_POST['task_assigned_to'],
+  			'task_color' => $this->getColor($_POST['task_project']),
   			'task_timestamp' => $_POST['timestamp'],
   			'task_status' => '1',
   			'task_created_by' => $_POST['task_created_by']
@@ -39,6 +40,7 @@ Class Task_model extends CI_Model {
   			'task_notes' => $_POST['task_notes'],
   			'task_project' => $_POST['task_project'],
   			'task_assigned_to' => $_POST['task_assigned_to'],
+  			'task_color' => $this->getColor($_POST['task_project']),
   			'task_timestamp' => $_POST['timestamp'],
   			'task_completed' => $_POST['task_completed'],
   			'task_status' => $_POST['status']
@@ -117,6 +119,27 @@ Class Task_model extends CI_Model {
  		}
  		
  		return $project_name;
+  	}
+  	function getColor($color)
+  	{
+  		
+  		$query = $this->db->select('color_id')
+  		->where('project_id', $color)
+  		->get('projects');
+  		foreach ($query->result()as $row)
+  		{
+  			$color_id = $row->color_id;
+  		}
+  		$query2 = $this->db->select('color_code')
+  		->where('color_id', $color_id)
+  		->get('color_coding');
+  		foreach ($query2->result() as $row2)
+  		{
+  			$color_code = $row2->color_code;
+  		}
+  		
+  		
+  		return $color_code;
   	}
 }
 ?>

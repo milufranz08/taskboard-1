@@ -1,66 +1,61 @@
 @CHARSET "UTF-8";
 
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #cccccc;
+body{
+	font-family: Century Gothic;
+	font-weight: bold;
 }
-
-.body-top {
-  padding-top: 240px;
-  
+h1.large
+{
+	font-size: 100px;
+	text-align: center;
+	font-family: Comic Sans MS, cursive, sans-serif;
 }
-
-.body-bottom {
-  padding-top: 60px;
-  
+.btn-default
+{
+	font-weight: bold;
+	font-size: 15px;
+	padding: 15px;
+	width: 12em; 
+	height: 6em;
+	white-space:normal;
+	border-radius: 15px;
 }
-
-.header {
-  background-image: url('http://www.up-downbikes.it/images/Cool-Designs-HD-Wallpaper.jpg'); 
-  background-size: cover; 
-  padding-top: 100px;
-
+sectionTop{
+	text-align: center;
 }
-.header-top {
-  background-image: url('http://www.up-downbikes.it/images/Cool-Designs-HD-Wallpaper.jpg'); 
-  background-size: cover; 
-  padding-top: 100px;
-
+h4.bold{
+	text-align: center;
+	font-size: 30px;
+	text-decoration: underline;
 }
-
-.header-bottom{
-  background-image: url('http://www.up-downbikes.it/images/Cool-Designs-HD-Wallpaper.jpg'); 
-  background-size: cover; 
-  padding-top: 100px;
-  margin-bottom: 30px;
-
+taskTickets
+{
+	position:relative;
+    left:10%;
 }
-
-.header-text {
-  margin-bottom: 0px;
-  color: white;
-
+.welcome
+{
+	
+	font-size: 50px;
 }
-
-
-
-/*
-	=====================================
-	Buttons
-	====================================
-*/
-
-.button-link {
-	float: left;
-	padding: 10px 15px;
+.btn-info
+{
 	background: #F5F5F5;
 	color: black;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
 	border: solid 1px #DCDCDC;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+.button-link {
+    float: left;
+    padding: 10px 15px;
+    background: #F5F5F5;
+    color: black;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #DCDCDC;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+

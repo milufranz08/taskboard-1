@@ -10,8 +10,8 @@
 	}?>
 <html>
  <body> 
- 	<div class="container">
 
+		<div class="container">
 		<div  id="body_cont">
 			<h1>Welcome <?php echo $username; ?>!</h1>
 			
@@ -26,32 +26,38 @@
   		<div class="row">
 			<div class="col-6 col-md-2">
   				<asideTop>
-					<h4><a href="completeTasks">Completed Tasks</a></h4>
+					<h4>Completed Tasks</h4>
+					<p><a href="completeTasks">View All</a></p>
 				</asideTop>
 				<asideBottom>
-					<h4><a href="projects">Projects</a></h4>
-				</asideBottom>		
-		</div>
-  			<div class="col-6 col-md-8">
+					<h4>Projects</a></h4>
+					<p><a href="projects">View All</a></p>
+				</asideBottom>	
+			</div>
+  			<div class="col-6 col-md-10">
   				<sectionTop>
-					<h4>In Progress</h4>
+					<h4 class="bold">In Progress</h4>
 					<?php foreach ($tasks as $row1):?>
 					<?php if($row1->task_status == "2"):?>
 					<taskTickets>
   							<div class="btn-group" role="group">
-    								<a href="<?php echo site_url()?>/Task/manage_task/<?php echo $row1->task_id?>" type="button" class="btn btn-default"><?php echo $row1->task_name?></a>
+    								<a href="<?php echo site_url()?>/Task/manage_task/<?php echo $row1->task_id?>" 
+    								style="background-color: <?php echo $row1->task_color?>;" 
+    								type="button" class="btn btn-default"><?php echo $row1->task_name?></a>
 							</div>
 					</taskTickets>
 					<?php endif;?>
 					<?php endforeach;?>
 				</sectionTop>
 				<sectionBottom>
-					<h4>Not Started</h4>
+					<h4 class="bold">Not Started</h4>
 					<?php foreach ($tasks as $row2):?>
 					<?php if($row2->task_status == "1"):?>
 					<taskTickets>
   							<div class="btn-group" role="group">
-    								<a href="<?php echo site_url()?>/Task/manage_task/<?php echo $row2->task_id?>" type="button" class="btn btn-default"><?php echo $row2->task_name?></a>
+    								<a href="<?php echo site_url()?>/Task/manage_task/<?php echo $row2->task_id?>" 
+    								type="button" style="background-color: <?php echo $row2->task_color?>;" 
+    								class="btn btn-default"><?php echo $row2->task_name?></a>
 							</div>
 					</taskTickets>
 					<?php endif;?>
