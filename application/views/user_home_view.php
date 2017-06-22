@@ -22,11 +22,11 @@
 			<div class="col-6 col-md-2">
   				<div class="asideTop">
 					<h4>Completed Tasks</h4>
-					<p><a href="completeTasks">View All</a></p>
+					<p><a href="<?php echo site_url()?>/Complete">View All</a></p>
 				</div>
 				<div class="asideBottom">
 					<h4>Projects</a></h4>
-					<p><a href="projects">View All</a></p>
+				    <p><a href="<?php echo site_url()?>/Complete/all_Projects">View All</a></p>
 				</div>	
 			</div>
 			<div class="container-fluid">
