@@ -6,6 +6,7 @@
    		<script src="<?php echo site_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="<?php echo base_url();?>favicon.ico" type="image/x-icon" />
     <title>Task Board<?php if (isset($page_title)) { echo ' | '.$page_title; } ?></title>
 
   </head>
