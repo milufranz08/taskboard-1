@@ -31,7 +31,10 @@ class Site extends CI_Controller {
 	
 	public function newProject()
 	{
-		$this->load->view('templates/header');
+		$this->load->model('Project_model');
+		$data["results"] = $_SESSION['data'];
+		$data["color"] = $this->Project_model->getColors();
+		$this->load->view('templates/header', $data);
 		$this->load->view('pages/new_project_page_view');
 		$this->load->view('templates/footer');
 	}

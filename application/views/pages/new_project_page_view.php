@@ -1,7 +1,18 @@
-
+<body>
+<?php foreach($results as $row){
+		if (array_key_exists('username', $row)) {
+			$username = $row->username;
+			$user_id = $row->user_id;
+			$team_lead_status = $row->team_lead_status;
+		}
+		else {
+			$username = $row->email;
+		}
+	}?>
 <div class="container">
 <form data-validate="parsley" method="post" accept-charset="utf-8"
-	name="newprojectform" id="form" > <!-- TODO: add action = "..." -->
+	name="newprojectform" id="form" action="<?php echo site_url()?>/Project/submit_project">
+	<input type="hidden" name="project_created_by" id="project_created_by" value="<?php echo $user_id?>">
 <div class="row">
 <div class="col-6 col-md-2">
 </div>
@@ -15,6 +26,13 @@
     <label>Color</label>
   	<select class="form-control" id="inlineFormCustomSelect" name="color_id" required>
   	<option value="">Pick a color</option>
+  	<?php 	foreach($color as $row1) {
+  				echo"<option name='color_id' id='color_id' value='";
+				echo "$row1->color_id";
+				echo"'>";
+  				echo"$row1->color_name";
+  				echo"</option>";
+  			}?>
   	</select>
     </div>
 </div>
@@ -33,3 +51,4 @@
 </div>	
 </form>
 </div>
+</body>

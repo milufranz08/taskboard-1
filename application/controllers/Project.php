@@ -7,6 +7,11 @@ class Project extends CI_Controller {
 		$this->load->model('Project_model','',TRUE);
 	}
 	
+	function submit_project() {
+		$this->Project_model->insertProject();
+		redirect('home', 'refresh');
+	}
+	
 	function manage_project($project_id)
 	{
 		$data["results"] = $_SESSION['data'];
