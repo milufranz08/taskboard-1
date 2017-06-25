@@ -33,6 +33,17 @@ class Complete extends CI_Controller {
  		
  	}
  
+ 	function a_Project()
+ 	{
+ 			
+ 		$data["projects"]=$this->complete_model->get_all_projects();
+ 			
+ 		$this->load->view('templates/header');
+ 		$this->load->view('pages/project_page_view', $data);
+ 		$this->load->view('templates/footer');
+ 			
+ 	}
+ 	
 }
 
  
