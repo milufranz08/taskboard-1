@@ -5,4 +5,9 @@ Class homepage_model extends CI_Model {
 		return $query->result();
 	}
 	
+	function getProjects(){
+		$query = $this->db->get('projects');
+		return $query->result();
+	}
+	
 }
