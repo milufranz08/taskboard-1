@@ -1,12 +1,23 @@
 <?php
 Class Project_model extends CI_Model {
-	function get_project(){
-		$query = $this->db->get('projects');
+	function get_project($project_id){
+		$this->db->select('project_id, project_name, project_desc, color_id, project_created_by');
+		$this->db->from('projects');
+		$this->db->where('project_id', $project_id);
+		$query = $this->db->get();
 		return $query->result();
 	}
 	
 	function getColors() {
 		$query = $this->db->get('color_coding');
+		return $query->result();
+	}
+	
+	function getColorFromId($color_id) {
+		$this->db->select('color_name');
+		$this->db->from('color_coding');
+		$this->db->where('color_id', $color_id);
+		$query = $this->db->get();
 		return $query->result();
 	}
 	
@@ -19,5 +30,25 @@ Class Project_model extends CI_Model {
 				'project_created_by' => $_POST['project_created_by']
 		);
 		$this->db->insert('projects', $data);
+	}
+	
+	function completeProject($project_id) {
+		//TODO: How should a completed project be handled?
+	}
+	
+	function updateProject($project_id) {
+		$data = array(
+				'project_name' => $_POST['project_name'],
+				'color_id' => $_POST['color_id'],
+				'project_desc' => $_POST['project_desc'],
+				'project_created_by' => $_POST['project_created_by'],
+		);
+		$this->db->where('project_id', $project_id);
+		$this->db->update('projects', $data);
+	}
+	
+	function deleteProject($project_id) {
+		$this->db->where('project_id', $project_id);
+		$this->db->delete('projects');
 	}
 }
