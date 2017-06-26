@@ -13,7 +13,7 @@ class Login extends CI_Controller {
   		unset ($_SESSION['Error']);
   	}
     $this->load->helper(array('form'));
-    $this->load->view('templates/header');
+    $this->load->view('templates/login_header');
     $this->load->view('login_view');
     $this->load->view('templates/footer');
   }
@@ -29,7 +29,7 @@ class Login extends CI_Controller {
   	{
   		//Redirect to login page
   		$_SESSION['Error'] = 'Username and Password are both required';
-  		$this->load->view('templates/header');
+  		$this->load->view('templates/login_header');
   		$this->load->view('login_view');
   		$this->load->view('templates/footer');
   	}
@@ -46,7 +46,7 @@ class Login extends CI_Controller {
   		else {
   			//redirect to login page
   			$_SESSION['Error'] = 'Username or password is invalid';
-  			$this->load->view('templates/header');
+  			$this->load->view('templates/login_header');
   			$this->load->view('login_view');
   			$this->load->view('templates/footer');
   		}
