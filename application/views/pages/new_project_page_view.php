@@ -10,11 +10,14 @@
 		}
 	}?>
 <div class="container">
+<div class="span4 offset4 text-center">
+	<h1>New Project</h1>
+</div>
 <form data-validate="parsley" method="post" accept-charset="utf-8"
 	name="newprojectform" id="form" action="<?php echo site_url()?>/Project/submit_project">
 	<input type="hidden" name="project_created_by" id="project_created_by" value="<?php echo $user_id?>">
 <div class="row">
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-3">
 </div>
 	<div class="col-6 col-md-4">
 	<div class="form-group">
@@ -37,7 +40,7 @@
     </div>
 </div>
 <div class="row">
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-3">
 </div>
 	<div class="col-6 col-md-4">
 	<div class="form-group">
@@ -46,7 +49,7 @@
   	</div>
 	</div>
 	<div class="col-6 col-md-2"><br><br><br><br><br>
-		<input type="submit" name="submit" value="Create Project" class="button-link" onclick="myFunction();">
+		<input type="submit" name="submit" value="Create Project" class="button-link">
 	</div>
 </div>	
 </form>
