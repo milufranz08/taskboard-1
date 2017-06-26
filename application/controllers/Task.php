@@ -21,6 +21,8 @@ class Task extends CI_Controller {
 	{
 		$this->Task_model->insertTask();
 		$data["results"] = $_SESSION['data'];
+		$data["tasks"] = $this->homepage_model->getTasks($_SESSION['user_id']);
+		$data["projects"] = $this->homepage_model->getProjects();
 		$data["tasks"] = $this->Task_model->get_tasks($_SESSION['user_id']);
 		$this->load->view('templates/header', $data);
 		$this->load->view('user_home_view');
@@ -30,6 +32,8 @@ class Task extends CI_Controller {
 	{
 		$this->Task_model->update_task($task_id);
 		$data["results"] = $_SESSION['data'];
+		$data["tasks"] = $this->homepage_model->getTasks($_SESSION['user_id']);
+		$data["projects"] = $this->homepage_model->getProjects();
 		$data["tasks"] = $this->Task_model->get_tasks($_SESSION['user_id']);
 		$this->load->view('templates/header', $data);
 		$this->load->view('user_home_view');

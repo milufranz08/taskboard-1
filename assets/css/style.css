@@ -75,6 +75,7 @@ taskTickets
     margin-bottom: 5px;
     width: 14em; 
 	height: 20em;
+	white-space: normal;
 	
 }
 .asideBottom
@@ -85,6 +86,7 @@ taskTickets
     margin-bottom: 5px;
     width: 14em; 
 	height: 20em;
+	white-space: normal;
 	
 }
 

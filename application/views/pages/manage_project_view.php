@@ -12,7 +12,7 @@
 <?php foreach($project as $row1) {
 		$project_name = $row1->project_name;
 		$project_desc = $row1->project_desc;
-		$color_id = $row1->color_id;
+		$color_id = $row1->project_color_id;
 		$created_by = $row1->project_created_by;
 		$project_id = $row1->project_id;
 }?>	

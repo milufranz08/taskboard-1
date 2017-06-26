@@ -123,12 +123,12 @@ Class Task_model extends CI_Model {
   	function getColor($color)
   	{
   		
-  		$query = $this->db->select('color_id')
+  		$query = $this->db->select('project_color_id')
   		->where('project_id', $color)
   		->get('projects');
   		foreach ($query->result()as $row)
   		{
-  			$color_id = $row->color_id;
+  			$color_id = $row->project_color_id;
   		}
   		$query2 = $this->db->select('color_code')
   		->where('color_id', $color_id)

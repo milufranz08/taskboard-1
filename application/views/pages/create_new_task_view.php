@@ -33,14 +33,10 @@
   <div class="col-6 col-md-2">
     <label>Select a Project</label><br>
   	<select class="form-control" id="inlineFormCustomSelect" name="task_project" required>
-  	<option value="">Choose a Project</option>
-  	<?php 	foreach($project as $row1) {
-  				echo"<option name='task_project' id='task_project' value='";
-				echo "$row1->project_id";
-				echo"'>";
-  				echo"$row1->project_name";
-  				echo"</option>";
-  			}?>
+  	<option value="">Personal</option>
+  	<?php 	foreach($project as $row1):?> {
+  				<option name='task_project' id='task_project' value='<?php echo $row1->project_id?>'><?php echo $row1->project_name?> </option>
+  	<?php endforeach;?>
   	</select><br>
 				<input type="hidden" name="timestamp" id="timestamp">
 				<input type="hidden" name="task_created_by" id="task_created_by" value="<?php echo $user_id?>">
@@ -61,7 +57,11 @@
   					<?php endif;?>
   	<?php endforeach;?>
   	<?php endif;?>
-  	</select><br><br><br><br><br><br><br><br><br>
+  	</select>
+  	<?php if ($team_lead_status == 'N'):?>
+  	 <input type="hidden" name="task_assigned_to" id="task_assigned_to" value="<?php echo $user_id; ?>">
+  	<?php endif;?>
+  	<br><br><br><br><br><br><br><br><br><br><br><br>
   	 <input type="submit" name="submit" value="Create Task" class="button-link" onclick="myFunction();">
   	</div>
 </div>

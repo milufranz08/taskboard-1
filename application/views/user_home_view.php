@@ -16,18 +16,20 @@
 			<a href="<?php echo site_url()?>/Login/newuser" class="btn btn-info" role="button" style="margin-right:30px;">Add User</a>
 		</div>
 		<?php endif; ?>
-		<div class="container col-md-offset-1">
+		<div class="container">
 		
 			<div  class="body_cont col-md-offset-4">
 				<h1>Welcome <?php echo $username; ?>!</h1>
 			</div>	
-			
-			<div  class="secondary_nav col-md-offset-5">
+			<br><br>
+			<div  class="secondary_nav">
 				<a href="<?php echo site_url()?>/Site/newTask/<?php echo $user_id?>" class="btn btn-info" role="button">New Task</a>
+				<?php if ($team_lead_status === 'Y') :?>
 				<a href="<?php echo site_url().'/Site/newProject';?>" class="btn btn-info" role="button">New Project</a>
+				<?php endif; ?>
   			</div>
   			
-		<div class="container-fluid">
+
   		<div class="row">  	
 			<div class="col-6 col-md-2 center-block">
   				<div class="asideTop">
@@ -67,11 +69,12 @@
   			<div class="col-6 col-md-10">
   				<sectionTop>
 					<h4 class="bold">In Progress</h4>
+					<taskTickets>
 					<?php $b = 0;?>
 					<?php foreach ($tasks as $row1):?>
 					<?php if($row1->task_status == "2"):?>
 					<?php $b++;?>
-					<taskTickets>
+					
 					<div class="btn-group" role="group">
 						<a
 							href="<?php echo site_url()?>/Task/manage_task/<?php echo $row1->task_id?>"
@@ -83,20 +86,21 @@
 					<?php if($b == 0):?>
 					<div class="col-md-10 col-md-offset-1">
 						<div class="alert alert-info text-center" role="alert">
-  							<a href="#" class="alert-link">You haven't started any task yet!</a>
+  							<p class="alert-link">You haven't started any task yet!</p>
 						</div>
 					</div>
 					<?php endif;?>
 					</taskTickets>
-				</sectionTop>
+				</sectionTop><br><br><br><br>
 				
 				<sectionBottom>
 					<h4 class="bold">Not Started</h4>
+					<taskTickets>
 					<?php $a = 0;?>
 					<?php foreach ($tasks as $row2):?>
 					<?php if($row2->task_status == "1"):?>
 					<?php $a++;?>
-					<taskTickets>
+					
 					<div class="btn-group" role="group">
 						<a
 							href="<?php echo site_url()?>/Task/manage_task/<?php echo $row2->task_id?>"
@@ -109,7 +113,7 @@
 					<?php if($a == 0):?>
 					<div class="col-md-10 col-md-offset-1">
 						<div class="alert alert-info text-center" role="alert">
-  							<a href="#" class="alert-link">You have started all your tasks!</a>
+  							<p class="alert-link">You have started all your tasks!</p>
 						</div>
 					</div>
 					<?php endif;?>

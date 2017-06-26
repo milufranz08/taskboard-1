@@ -29,13 +29,10 @@
     <label>Color</label>
   	<select class="form-control" id="inlineFormCustomSelect" name="color_id" required>
   	<option value="">Pick a color</option>
-  	<?php 	foreach($color as $row1) {
-  				echo"<option name='color_id' id='color_id' value='";
-				echo "$row1->color_id";
-				echo"'>";
-  				echo"$row1->color_name";
-  				echo"</option>";
-  			}?>
+  	
+  	<?php foreach($color as $row1):?> 
+  				<option name='color_id' id='color_id' value='<?php echo $row1->color_id ?>'><?php echo $row1->color_name ?></option>
+  	<?php endforeach;?>
   	</select>
     </div>
 </div>

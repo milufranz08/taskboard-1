@@ -44,7 +44,7 @@ class Project extends CI_Controller {
 		$data["project"] = $this->Project_model->get_project($project_id);
 		$data["color"] = $this->Project_model->getColors();
 		foreach($data["project"] as $row) {
-			$color_id = $row->color_id;
+			$color_id = $row->project_color_id;
 		}
 		$data["color_by_id"] = $this->Project_model->getColorFromId($color_id);
 		$this->load->view('templates/header', $data);

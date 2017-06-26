@@ -1,7 +1,7 @@
 <?php
 Class Project_model extends CI_Model {
 	function get_project($project_id){
-		$this->db->select('project_id, project_name, project_desc, color_id, project_created_by');
+		$this->db->select('project_id, project_name, project_desc, project_color_id, project_created_by');
 		$this->db->from('projects');
 		$this->db->where('project_id', $project_id);
 		$query = $this->db->get();
@@ -9,7 +9,12 @@ Class Project_model extends CI_Model {
 	}
 	
 	function getColors() {
-		$query = $this->db->get('color_coding');
+				
+		$this->db->select('*');
+		$this->db->from('color_coding');
+		$this->db->join('projects', 'projects.project_color_id = color_coding.color_id', 'left');
+		$this->db->where('projects.project_color_id', NULL);
+		$query = $this->db->get();
 		return $query->result();
 	}
 	
@@ -25,7 +30,7 @@ Class Project_model extends CI_Model {
 	{
 		$data = array(
 				'project_name' => $_POST['project_name'],
-				'color_id' => $_POST['color_id'],
+				'project_color_id' => $_POST['color_id'],
 				'project_desc' => $_POST['project_desc'],
 				'project_created_by' => $_POST['project_created_by']
 		);
@@ -39,7 +44,7 @@ Class Project_model extends CI_Model {
 	function updateProject($project_id) {
 		$data = array(
 				'project_name' => $_POST['project_name'],
-				'color_id' => $_POST['color_id'],
+				'project_color_id' => $_POST['color_id'],
 				'project_desc' => $_POST['project_desc'],
 				'project_created_by' => $_POST['project_created_by'],
 		);
