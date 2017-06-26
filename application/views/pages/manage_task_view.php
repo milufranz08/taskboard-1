@@ -93,8 +93,10 @@
 	function myFunction3()
 	{
 		document.getElementById("status").value= "3";
-		document.getElementById("task_completed").value= new Date();
+		var d = new Date();
+		document.getElementById("task_completed").value= d.getTime();
 		
 	}
-   		document.getElementById("timestamp").value= new Date();
+		var d = new Date();
+   		document.getElementById("timestamp").value= d.getTime();
 	</script>

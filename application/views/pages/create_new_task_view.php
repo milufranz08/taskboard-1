@@ -33,7 +33,7 @@
   <div class="col-6 col-md-2">
     <label>Select a Project</label><br>
   	<select class="form-control" id="inlineFormCustomSelect" name="task_project" required>
-  	<option value="">Personal</option>
+  	<option value="">Choose Project</option>
   	<?php 	foreach($project as $row1):?> {
   				<option name='task_project' id='task_project' value='<?php echo $row1->project_id?>'><?php echo $row1->project_name?> </option>
   	<?php endforeach;?>
