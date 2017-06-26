@@ -39,7 +39,7 @@
     <label>Color</label>
   	<select class="form-control" id="inlineFormCustomSelect" name="color_id" required>
   	<option value="">Pick a color</option>
-  	<option selected="selected"><?php echo $color_name?></option>
+  	<option selected value="<?php echo $color_id?>"><?php echo $color_name?></option>
   	<?php 	foreach($color as $row2) {
   				if ($row2->color_name != $color_name) {
   					echo"<option name='color_id' id='color_id' value='";
