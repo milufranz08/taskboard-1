@@ -3,6 +3,7 @@
 		if (array_key_exists('username', $row)) {
 			$username = $row->username;
 			$user_id = $row->user_id;
+			$team_lead_status = $row->team_lead_status;
 		}
 		else {
 			$username = $row->email;
@@ -10,7 +11,11 @@
 	}?>
 <html>
  <body> 
-
+ 		<?php if ($team_lead_status === 'Y') :?>
+ 		<div class="span1 text-right">
+			<a href="<?php echo site_url()?>/Login/newuser" class="btn btn-info" role="button" style="margin-right:30px;">Add User</a>
+		</div>
+		<?php endif; ?>
 		<div class="container col-md-offset-1">
 		
 			<div  class="body_cont col-md-offset-4">

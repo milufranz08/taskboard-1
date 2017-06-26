@@ -27,9 +27,9 @@
   </div>
     <br>
     <br>
+  <?php echo form_open('Login/verify_login'); ?>
   <div class='row-fluid'>
   <div class="span4 offset4 text-center">
-    <?php echo form_open('Login/verify_login'); ?>
       <label for="username">Username:</label>
       <input type="text" size="20" id="username" name="username"/>
   </div>
@@ -47,12 +47,14 @@
       <input type="submit" value="  Login  "/>
   </div>
   </div>
+<!-- Uncomment for New User button on login page
   <div class='row-fluid'>
   <div class="span4 offset4 text-center">
       <input type="button" value=" Register " onclick="redirect();"/>
-    </form>
   </div>
   </div>
+-->
+  </form>
   </div>
   </body>
 </html>
