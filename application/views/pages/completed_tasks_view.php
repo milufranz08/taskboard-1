@@ -38,11 +38,11 @@
   	</div>
   	<div class="form-group">
     	<label for="Textarea">Description</label>
-    	<textarea readonly="class="form-control" name="task_desc" id="task_desc" rows="3"" required><?php echo $task_description?></textarea>
+    	<textarea readonly class="form-control" name="task_desc" id="task_desc" rows="3"" required><?php echo $task_description?></textarea>
   	</div>
   	<div class="form-group">
     	<label for="Textarea">Notes</label>
-    	<textarea readonly="class="form-control" name="task_notes" id="task_notes"  rows="3">" <?php echo $task_notes?> </textarea>
+    	<textarea readonly class="form-control" name="task_notes" id="task_notes"  rows="3"> <?php echo $task_notes?> </textarea>
  	</div>
   </div>
   <div class="col-6 col-md-2">
@@ -79,9 +79,8 @@
   	<?php endforeach;?>
   	<?php endif;?>
   	</select><br><br><br>
-  		<input type="submit" name="submit" value="Start Task" class="button" onclick="myFunction1()" disabled><br><br><br>
-  		<input type="submit" name="submit" value="Update Task" class="button" disabled><br><br><br>
-  		<input type="submit" name="submit" value="Complete Task" class="button" onclick="myFunction3()" disabled>
+  		<input type="submit" name="submit" value="Back" class="button" onclick="<?php echo site_url()?>/Task/completed_tasks/<?php echo $task_id ?>" disabled><br><br><br>
+
   	</div>
 </div>
 </form>
