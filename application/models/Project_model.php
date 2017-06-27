@@ -56,4 +56,13 @@ Class Project_model extends CI_Model {
 		$this->db->where('project_id', $project_id);
 		$this->db->delete('projects');
 	}
+	
+	function get_all_tasks($project_id)
+	{
+		$this->db->where('project_id', $project_id);
+		$this->db->from('tasks');
+		$this->db->join('projects', 'projects.project_id = tasks.task_project', 'left');
+		$query = $this->db->get();
+		return$query->result();
+	}
 }

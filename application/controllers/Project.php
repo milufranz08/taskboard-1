@@ -52,4 +52,11 @@ class Project extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	
+	function all_Tasks($project_id)
+	{
+		$data["results"] = $_SESSION['data'];
+		$data["project"] = $this->Project_model->get_all_tasks($project_id);
+		
+	}
+	
 }
