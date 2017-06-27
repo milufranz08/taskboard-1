@@ -79,7 +79,7 @@
   	<?php endforeach;?>
   	<?php endif;?>
   	</select><br><br><br>
-  		<input type="submit" name="submit" value="Back" class="button" onclick="<?php echo site_url()?>/Task/completed_tasks/<?php echo $task_id ?>" disabled><br><br><br>
+  		<button onclick="history.go(-1);">Back </button><br><br><br>
 
   	</div>
 </div>
