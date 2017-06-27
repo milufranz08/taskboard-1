@@ -32,7 +32,7 @@ class Project extends CI_Controller {
 	function manage_project($project_id)
 	{
 		$data["results"] = $_SESSION['data'];
-		$data["project"] = $this->Project_model->get_project($project_id);
+		$data["projects"] = $this->Project_model->get_project($project_id);
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/project_page_view');
 		$this->load->view('templates/footer');

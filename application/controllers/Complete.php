@@ -26,7 +26,7 @@ class Complete extends CI_Controller {
  	{
  		
  		$data["projects"]=$this->complete_model->get_all_projects();
- 		
+ 		$data["results"] = $_SESSION['data'];
  		$this->load->view('templates/header');
  		$this->load->view('pages/all_projects_view', $data);
  		$this->load->view('templates/footer');
@@ -37,7 +37,7 @@ class Complete extends CI_Controller {
  	{
  			
  		$data["projects"]=$this->complete_model->get_all_projects();
- 			
+ 		$data["results"] = $_SESSION['data'];
  		$this->load->view('templates/header');
  		$this->load->view('pages/project_page_view', $data);
  		$this->load->view('templates/footer');

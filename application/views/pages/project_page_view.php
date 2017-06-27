@@ -1,7 +1,7 @@
 <?php foreach($results as $row){
 		$user_id = $row->user_id;
 }?>
-<?php foreach($project as $row1) {
+<?php foreach($projects as $row1) {
 		$project_id = $row1->project_id;
 		$created_by = $row1->project_created_by;
 }

@@ -17,19 +17,19 @@
 
 
 		<?php foreach ($projects as $row):?>
-						
+						<?php if($row->task_assigned_to == $_SESSION['user_id'] || $row->project_created_by == $_SESSION['user_id']):?>
 						
 						
 						
 							<taskTickets>
 		  							<div class="btn-group role="group">
 		    								 
-		    								<a href="<?php echo site_url()?>/Complete/a_project/<?php echo $row->project_name?>
-		    								"type="button" style="width:650px; height:100px;" 
+		    								<a href="<?php echo site_url()?>/Complete/a_project/<?php echo $row->project_id?>
+		    								"type="button" style="width:650px; height:100px; background-color:<?php echo $row->color_code?>;" 
 		    								class="btn btn-default"><?php echo $row->project_name?></a>
 									</div>
 							</taskTickets>
-
+							<?php endif;?>	
 							<?php endforeach;?>	
 
 

@@ -55,12 +55,15 @@
 					<p><a href="<?php echo site_url()?>/Complete/all_Projects">View All</a></p>
 					<?php $j = 0;?>
 					<?php foreach ($projects as $row3):?>
+					<?php if($row3->task_assigned_to == $_SESSION['user_id'] || $row3->project_created_by == $_SESSION['user_id']):?>
 					<?php if($j++ < 5):?>
 					<taskTickets>
 						<a
 							href="<?php echo site_url()?>/Project/manage_project/<?php echo $row3->project_id?>"
+							style="background-color:<?php echo $row3->color_code?>; border: solid 1px #DCDCDC;"
 							type="button" class="btn btn-link"><?php echo $row3->project_name?></a><br>
 					</taskTickets>
+					<?php endif;?>
 					<?php endif;?>
 					<?php endforeach;?>
 				</div>		

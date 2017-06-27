@@ -10,7 +10,12 @@ Class homepage_model extends CI_Model {
 	}
 	
 	function getProjects(){
-		$query = $this->db->get('projects');
+		
+		$this->db->select('*');
+		$this->db->from('projects');
+		$this->db->join('tasks', 'tasks.task_project = projects.project_id', 'left');
+		$this->db->join('color_coding', 'color_coding.color_id = projects.project_color_id');
+		$query = $this->db->get();
 		return $query->result();
 	}
 	
