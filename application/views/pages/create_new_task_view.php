@@ -11,6 +11,9 @@
 	}?>
 
 <div class="container">
+			<div  class="body_cont col-md-offset-4">
+				<h1>Create New Task</h1>
+			</div>	<br><br>
 <form data-validate="parsley" method = "post" accept-charset="utf-8" 
 	name="taskForm" id="form" action="<?php echo site_url()?>/Task/submit_task">
 <div class="row">

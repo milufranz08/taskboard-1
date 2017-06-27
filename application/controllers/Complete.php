@@ -9,6 +9,7 @@ class Complete extends CI_Controller {
    $this->load->model('Task_model','',TRUE);
    $this->load->model('homepage_model','',TRUE);
    $this->load->model('complete_model','',TRUE);
+   $this->load->model('Project_model','',TRUE);
  }
  
  function index()
@@ -33,10 +34,10 @@ class Complete extends CI_Controller {
  		
  	}
  
- 	function a_Project()
+ 	function a_Project($project_id)
  	{
  			
- 		$data["projects"]=$this->complete_model->get_all_projects();
+ 		$data["projects"] = $this->Project_model->get_project($project_id);
  		$data["results"] = $_SESSION['data'];
  		$this->load->view('templates/header');
  		$this->load->view('pages/project_page_view', $data);

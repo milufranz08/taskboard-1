@@ -107,7 +107,7 @@
 					<div class="btn-group" role="group">
 						<a
 							href="<?php echo site_url()?>/Task/manage_task/<?php echo $row2->task_id?>"
-							style="background-color: <?php echo $row2->task_color?>;"
+							style="background-color: <?php echo $row2->task_color?> ;"
 							type="button" class="btn btn-default"><?php echo $row2->task_name?></a>
 					</div>
 					

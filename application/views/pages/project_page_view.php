@@ -4,10 +4,11 @@
 <?php foreach($projects as $row1) {
 		$project_id = $row1->project_id;
 		$created_by = $row1->project_created_by;
+		$project_name = $row1->project_name;
 }
 ?>	
 
-<h1 align="center">All Tasks to the Project</h1>
+<h1 align="center"><?php echo $project_name?></h1>
 <br><br>
 <div class='container-fluid'>
   <div class='row-fluid'>

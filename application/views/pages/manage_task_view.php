@@ -24,6 +24,9 @@
 
 
 <div class="container">
+			<div  class="body_cont col-md-offset-4">
+				<h1>Manage Task</h1>
+			</div>	<br><br>
 <form enctype="multipart/form-data" data-validate="parsley" method = "post" accept-charset="utf-8" 
 	name="taskForm" id="form" action="<?php echo site_url()?>/Task/update_task/<?php echo $task_id ?>">
 <div class="row">
