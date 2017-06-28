@@ -1,4 +1,3 @@
-
 <?php
 Class Complete_model extends CI_Model {
 	function get_completed_tasks($user_id)

@@ -33,6 +33,7 @@ class Project extends CI_Controller {
 	{
 		$data["results"] = $_SESSION['data'];
 		$data["projects"] = $this->Project_model->get_project($project_id);
+		$data["tasks"] = $this->Project_model->get_all_tasks($project_id);
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/project_page_view');
 		$this->load->view('templates/footer');

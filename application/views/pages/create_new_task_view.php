@@ -73,6 +73,7 @@
 <br>
 	<script type="text/javascript">
 
-       	document.getElementById("timestamp").value= new Date();
+	var d = new Date();
+		document.getElementById("timestamp").value= d.getTime();
 
 	</script>

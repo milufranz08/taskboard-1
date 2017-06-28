@@ -55,7 +55,7 @@
 					<p><a href="<?php echo site_url()?>/Complete/all_Projects">View All</a></p>
 					<?php $j = 0;?>
 					<?php foreach ($projects as $row3):?>
-					<?php if($row3->task_assigned_to == $_SESSION['user_id'] || $row3->project_created_by == $_SESSION['user_id']):?>
+					<?php if($row3->task_assigned_to == $_SESSION['user_id'] && $row3->task_assigned_to != NULL || $row3->project_created_by == $_SESSION['user_id']):?>
 					<?php if($j++ < 5):?>
 					<taskTickets>
 						<a
