@@ -60,7 +60,7 @@ Class User extends CI_Model {
   	$team_lead_status = "N";
   	
   	$sql = "INSERT INTO users (first_name, last_name, email, username, password, team_lead_status)
-			VALUES ('$firstname', '$lastname', '$email', '$username', '$password' '$team_lead_status')";
+			VALUES ('$firstname', '$lastname', '$email', '$username', '$password', '$team_lead_status')";
   	
   	return $this -> db -> query($sql);
   }

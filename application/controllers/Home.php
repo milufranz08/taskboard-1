@@ -6,14 +6,14 @@ class Home extends CI_Controller {
    parent::__construct();
    $this->load->model('Task_model','',TRUE);
    $this->load->model('Project_model','',TRUE);
-   $this->load->model('homepage_model','',TRUE);
+   $this->load->model('Homepage_model','',TRUE);
  }
  
  function index()
  {
  	$data["results"] = $_SESSION['data'];
- 	$data["tasks"] = $this->homepage_model->getTasks($_SESSION['user_id']);
- 	$data["projects"] = $this->homepage_model->getProjects();
+ 	$data["tasks"] = $this->Homepage_model->getTasks($_SESSION['user_id']);
+ 	$data["projects"] = $this->Homepage_model->getProjects();
  	$this->load->view('templates/header');
 	$this->load->view('user_home_view', $data);
 	$this->load->view('templates/footer');

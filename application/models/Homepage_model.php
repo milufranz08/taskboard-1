@@ -1,5 +1,5 @@
 <?php
-Class homepage_model extends CI_Model {
+Class Homepage_model extends CI_Model {
 	function getTasks($user_id){
 		$this->db->select('*');
 		$this->db->from('tasks');

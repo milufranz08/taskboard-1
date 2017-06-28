@@ -1,4 +1,3 @@
-
 <?php
 class Complete extends CI_Controller {
  
@@ -7,14 +6,14 @@ class Complete extends CI_Controller {
  {
    parent::__construct();
    $this->load->model('Task_model','',TRUE);
-   $this->load->model('homepage_model','',TRUE);
-   $this->load->model('complete_model','',TRUE);
+   $this->load->model('Homepage_model','',TRUE);
+   $this->load->model('Complete_model','',TRUE);
    $this->load->model('Project_model','',TRUE);
  }
  
  function index()
  {
- 	$data["completed"]=$this->complete_model->get_completed_tasks($_SESSION["user_id"]);
+ 	$data["completed"]=$this->Complete_model->get_completed_tasks($_SESSION["user_id"]);
  	
  	$this->load->view('templates/header');
  	$this->load->view('pages/all_completed_tasks_view', $data);
@@ -26,7 +25,7 @@ class Complete extends CI_Controller {
  	function all_Projects()
  	{
  		
- 		$data["projects"]=$this->complete_model->get_all_projects();
+ 		$data["projects"]=$this->Complete_model->get_all_projects();
  		$data["results"] = $_SESSION['data'];
  		$this->load->view('templates/header');
  		$this->load->view('pages/all_projects_view', $data);

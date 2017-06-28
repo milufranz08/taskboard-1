@@ -1,6 +1,6 @@
 
 <?php
-Class complete_model extends CI_Model {
+Class Complete_model extends CI_Model {
 	function get_completed_tasks($user_id)
 	
 	{
