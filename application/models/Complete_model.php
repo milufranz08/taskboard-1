@@ -13,6 +13,7 @@ Class Complete_model extends CI_Model {
 		$this->db->from('projects');
 		$this->db->join('tasks', 'tasks.task_project = projects.project_id', 'left');
 		$this->db->join('color_coding', 'color_coding.color_id = projects.project_color_id');
+		$this->db->group_by('project_id');
 		$query = $this->db->get();
 		return$query->result();
 	}
