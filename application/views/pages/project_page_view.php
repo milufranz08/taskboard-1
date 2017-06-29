@@ -41,9 +41,8 @@ $team_lead_status = $row->team_lead_status;
 <?php if($row->task_status == "3"):?>
 <?php if($i++ < 5):?>
 <taskTickets>
-<a
-href="<?php echo site_url()?>/Task/manage_task/<?php echo $row->task_id?>"
-type="button" class="btn btn-link"><?php echo $row->task_name?></a>
+<a href="<?php echo site_url()?>/Task/completed_tasks/<?php echo $row->task_id?>"
+	type="button" class="btn btn-link"><?php echo $row->task_name?></a>
 </taskTickets>
 <?php endif;?>
 <?php endif;?>
