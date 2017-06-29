@@ -51,13 +51,11 @@
     <label>Project</label><br>
     <select class="form-control" id="inlineFormCustomSelect" name="task_project" required>
   	<option selected value="<?php echo $task_project ?>"><?php echo $project_name ?></option>
-  	<?php 	foreach($project as $row1) {
-  				echo"<option name='task_project' id='task_project' value='";
-				echo "$row1->project_id";
-				echo"'>";
-  				echo"$row1->project_name";
-  				echo"</option>";
-  			}?>
+  	<?php 	foreach($project as $row1):?>
+  		<?php if($row1->task_assigned_to == $_SESSION['user_id'] && $row1->task_assigned_to != NULL || $row1->project_created_by == $_SESSION['user_id']):?> 
+  				<option name='task_project' id='task_project' value='<?php echo $row1->project_id ?>'> <?php echo $row1->project_name ?> </option>
+  		<?php endif;?>
+  		<?php endforeach;?>
   	</select><br>
 				<br>
 				<input type="hidden" name="timestamp" id="timestamp">

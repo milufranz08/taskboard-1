@@ -37,8 +37,10 @@
     <label>Select a Project</label><br>
   	<select class="form-control" id="inlineFormCustomSelect" name="task_project" required>
   	<option value="">Choose Project</option>
-  	<?php 	foreach($project as $row1):?> {
+  	<?php 	foreach($project as $row1):?>
+  	<?php if($row1->task_assigned_to == $_SESSION['user_id'] && $row1->task_assigned_to != NULL || $row1->project_created_by == $_SESSION['user_id']):?> 
   				<option name='task_project' id='task_project' value='<?php echo $row1->project_id?>'><?php echo $row1->project_name?> </option>
+  	<?php endif;?>
   	<?php endforeach;?>
   	</select><br>
 				<input type="hidden" name="timestamp" id="timestamp">
