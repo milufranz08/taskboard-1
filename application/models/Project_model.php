@@ -38,7 +38,8 @@ Class Project_model extends CI_Model {
 	}
 	
 	function completeProject($project_id) {
-		//TODO: How should a completed project be handled?
+		//This method is currently unused
+		//To utilize this method uncomment the 'complete' button in the manage_project_view
 	}
 	
 	function updateProject($project_id) {
@@ -53,8 +54,10 @@ Class Project_model extends CI_Model {
 	}
 	
 	function deleteProject($project_id) {
-		$this->db->where('project_id', $project_id);
-		$this->db->delete('projects');
+		//This method is currently unused
+		//To utilize this method uncomment the 'delete' button in the manage_project_view
+		//$this->db->where('project_id', $project_id);
+		//$this->db->delete('projects');
 	}
 	
 	function get_all_tasks($project_id)

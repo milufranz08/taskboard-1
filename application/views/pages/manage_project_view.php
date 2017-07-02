@@ -63,9 +63,9 @@
 	</div>
 	<div class="col-6 col-md-2"> <br>
 	<?php if ($user_id == $created_by) : ?> 
-		<input type="submit" name="complete" value="Complete Project" class="button-link">
-		<input type="submit" name="update" value="Update Project" class="button-link">
-		<input type="submit" name="delete" value="Delete Project" class="button-link">
+		<!-- <input type="submit" name="complete" value="Complete Project" class="button-link"> -->
+		<br><br><br><br><input type="submit" name="update" value="Update Project" class="button-link">
+		<!-- <input type="submit" name="delete" value="Delete Project" class="button-link"> -->
 	<?php endif; ?>
 	</div>
 </div>	
