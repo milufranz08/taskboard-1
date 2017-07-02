@@ -12,12 +12,12 @@
   <body>
   <div class='container-fluid'>
   <div class='row-fluid'>
-  <div class="span4 offset4 text-center">
+  <div class='span4 offset4 text-center'>
     <h1>Login</h1>
   </div>
   </div>
   <div class='row-fluid'>
-  <div class="span4 offset4 text-center">
+  <div class='span4 offset4 text-center'>
     <?php
     	if (isset ($_SESSION['Error'])) {
     		echo $_SESSION['Error'];

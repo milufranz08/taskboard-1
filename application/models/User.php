@@ -58,9 +58,10 @@ Class User extends CI_Model {
   	$username = $_POST['username'];
   	$password = md5($_POST['password']);
   	$team_lead_status = "N";
+  	$team_leader_id = $_POST[team_leader_id];
   	
-  	$sql = "INSERT INTO users (first_name, last_name, email, username, password, team_lead_status)
-			VALUES ('$firstname', '$lastname', '$email', '$username', '$password', '$team_lead_status')";
+  	$sql = "INSERT INTO users (first_name, last_name, email, username, password, team_lead_status, team_leader_id)
+			VALUES ('$firstname', '$lastname', '$email', '$username', '$password', '$team_lead_status', '$team_leader_id')";
   	
   	return $this -> db -> query($sql);
   }
