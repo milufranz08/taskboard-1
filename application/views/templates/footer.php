@@ -1,6 +1,7 @@
-<div class="navbar navbar-default navbar-fixed-bottom">
+</body>
+<div class="footer">
     <div class="container">
-      <p class="navbar-text center">© Copyright 2017</p>
+      Copyright &copy; 2017
     </div>
 </div>
   
