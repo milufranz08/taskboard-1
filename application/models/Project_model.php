@@ -37,9 +37,24 @@ Class Project_model extends CI_Model {
 		$this->db->insert('projects', $data);
 	}
 	
+	function incompleteTasks($project_id) {
+		$this->db->select('COUNT(*)');
+		$this->db->from('tasks');
+		$array = array('task_project' => $project_id, 'task_status !=' => 3);
+		$this->db->where($array);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+	
 	function completeProject($project_id) {
-		//This method is currently unused
-		//To utilize this method uncomment the 'complete' button in the manage_project_view
+		$data = array(
+				'project_name' => $_POST['project_name'],
+				'project_color_id' => 13,
+				'project_desc' => $_POST['project_desc'],
+				'project_created_by' => $_POST['project_created_by'],
+		);
+		$this->db->where('project_id', $project_id);
+		$this->db->update('projects', $data);
 	}
 	
 	function updateProject($project_id) {

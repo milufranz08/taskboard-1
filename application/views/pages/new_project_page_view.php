@@ -31,7 +31,9 @@
   	<option value="">Pick a color</option>
   	
   	<?php foreach($color as $row1):?> 
+  		<?php if($row1->color_name != 'Gray'):?>
   				<option name='color_id' id='color_id' value='<?php echo $row1->color_id ?>'><?php echo $row1->color_name ?></option>
+  		<?php endif;?>
   	<?php endforeach;?>
   	</select>
     </div>

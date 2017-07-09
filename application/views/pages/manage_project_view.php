@@ -23,6 +23,15 @@
 <div class="span4 offset4 text-center">
 	<h1>Manage Project</h1>
 </div>
+<div class='row-fluid'>
+			<div class='span4 offset4 text-center'>
+    		<?php
+				if (isset ( $_SESSION ['Error'] )) {
+					echo $_SESSION ['Error'];
+				}
+			?>
+			</div>
+</div>
 <form data-validate="parsley" method="post" accept-charset="utf-8"
 	name="newprojectform" id="form" action="<?php echo site_url()?>/Project/update_project/<?php echo $project_id ?>">
 	<input type="hidden" name="project_created_by" id="project_created_by" value="<?php echo $created_by?>">
@@ -41,7 +50,7 @@
   	<option value="">Pick a color</option>
   	<option selected value="<?php echo $color_id?>"><?php echo $color_name?></option>
   	<?php 	foreach($color as $row2) {
-  				if ($row2->color_name != $color_name) {
+  				if (($row2->color_name != $color_name) && ($row2->color_name != 'Gray')) {
   					echo"<option name='color_id' id='color_id' value='";
 					echo "$row2->color_id";
 					echo"'>";
@@ -63,8 +72,8 @@
 	</div>
 	<div class="col-6 col-md-2"> <br>
 	<?php if ($user_id == $created_by) : ?> 
-		<!-- <input type="submit" name="complete" value="Complete Project" class="button-link"> -->
-		<br><br><br><br><input type="submit" name="update" value="Update Project" class="button-link">
+		<br><input type="submit" name="complete" value="Complete Project" class="button-link">
+		<br><br><br><input type="submit" name="update" value="Update Project" class="button-link">
 		<!-- <input type="submit" name="delete" value="Delete Project" class="button-link"> -->
 	<?php endif; ?>
 	</div>
